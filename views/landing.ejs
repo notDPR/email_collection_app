@@ -1,0 +1,66 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link rel="stylesheet" href="/app.css">
+<!--------------------------------------------------------------------------------------------------->
+
+
+<div class="popup"></div>
+<div class="container">
+    <h1>JOIN US</h1>
+    <p>Enter your email to join <strong><%=out%></strong> others on our waitlist.
+    <br>
+    <%if(error=="dup" && eml!=""){%>
+    <strong><u><%=eml%></u></strong> is already registered.
+    <%}else{%>
+    <%if(error=="" && eml != ""){%>
+    <strong><u><%=eml%></u></strong> is successfully registered.
+    <%}}%>
+    </p>
+    
+    
+    <form action="/" method="POST" onSubmit="return checkform()">
+        <input type="text" placeholder="Enter Your Email" name="email"></input>
+        <button type="submit">JOIN NOW</button>
+    </form>
+    
+</div>
+
+<!---------------------------------------------------------------------------------------------------->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/popper.js@1.14.3/dist/umd/popper.js"></script>
+<script>
+    $(".popup").hide() ;
+    
+    function checkform()
+    {
+        var inpt = $("input") ;
+        var popup = $(".popup") ;
+        
+        var popper = new Popper(inpt,popup,{
+            placement: 'top',
+            modifiers :{
+                offset : {
+                    enabled : true ,
+                    offset : '0,0'
+                }
+            }              
+        });
+        
+        if(inpt.val() == ""){
+            popup.text("Give your email before submit.") ;
+            popup.show() ;
+            return false ;
+        }
+        
+        var chk = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/ ;
+        
+        if(chk.test(inpt.val()) == false){
+            popup.text("Please give a valid email.") ;
+            popup.show() ;
+            return false ;
+        }
+        return true ;
+    }
+    
+</script>

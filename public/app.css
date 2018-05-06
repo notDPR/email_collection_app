@@ -1,0 +1,121 @@
+html{
+    width: 100%;
+    height: 100% ;
+}
+body{
+    margin : 0;
+    font-family: 'Roboto', sans-serif;
+    text-align: center ;
+    text-shadow : 0 .05rem .1rem rgba(0,0,0,0.5) ;
+    background-size: cover ;
+    background-position: center center ;
+    background-image : url(https://i.imgur.com/3u9ZyU3.jpg);
+    font-weight: 100;
+}
+
+.container{
+    display: flex ;
+    flex-wrap : wrap ;
+}
+form{
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    margin-top: 7px;
+}
+form input{
+    font-family: 'Lato', sans-serif;
+    background: transparent;
+    outline: none;
+    padding: 0;
+    border: 0;
+    /*background: #a07f8630;*/
+    border-bottom: 2px solid #101010;
+
+    border-radius: 8px;
+    width: 47%;
+    margin-left: auto;
+    font-size :30px;
+}
+
+.popup{
+    background-color: #fcad26;
+    color: white;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 20px;
+    font-weight: 300;
+}
+h1{
+    flex-basis: 100%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-weight: 100;
+    font-size: 26vw;
+}
+
+.container p{
+    flex-basis: 100%;
+    font-weight: 400;
+    font-size: 40px;
+    margin-top: 0px;
+}
+
+form button{
+    font-family: 'Lato', sans-serif;
+    font-weight :bold;
+  opacity: 0.9;
+  outline : none ;
+  border : none ; 
+  cursor : pointer ;
+  position : relative;
+  background-color : #fcad26 ;
+  font-size: 16px ;
+  color : white ;
+  text-transform : uppercase ;
+  letter-spacing : 2px ;
+  padding: 19px 31px ;
+  margin : 0 auto ;
+  border-radius : 20px ;
+  box-shadow : 0 6px #efa424 ;
+  margin-left: 47.281px;
+  
+  transition : color 0.1s linear 0s , 
+               hover 0.2s linear 0s ;
+}
+form button:hover{
+  box-shadow : 0 4px #efa424 ;
+  top : 2px ;
+  opacity : 1;
+  color : black;
+}
+
+form button:active{
+  box-shadow : none ;
+  top : 6px ;
+}
+
+@media screen and (max-width:1000px)
+{
+    form{
+        flex-direction : column ;
+            margin-top: 50px;
+    }
+    form input{
+        margin:0;
+            width: 75%;
+    align-self: center;
+    }
+    form button{
+        margin : 0 ;
+        margin-top: 35px;
+        width: 160px;
+    align-self: center;
+    }
+    .container p{
+        margin-top :20px;
+        margin-bottom : 20px ;
+        font-size : 35px ;
+    }
+}
