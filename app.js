@@ -108,8 +108,8 @@ app.post("/" , function(req,res){
 
 // ----------------------------------------------------- //
 
-app.listen(process.env.PORT || 8080, function () {
- console.log('App listening on port 8080!');
+app.listen(process.env.PORT , process.env.IP , function () {
+ console.log('Your app is live');
 });
 
 
